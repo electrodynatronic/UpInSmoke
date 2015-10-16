@@ -1,4 +1,4 @@
-from flask import Flask, url_for, send_from_directory
+from flask import Flask, url_for, send_from_directory, render_template
 import os
 
 
@@ -10,8 +10,15 @@ def favicon():
                                'img/favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route("/")
+@app.route("/index")
+def index():
+    return render_template("index.html",
+                           title='Home')
+			   			   
+@app.route("/hello")
 def hello():
     return "Hello World!"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
+
