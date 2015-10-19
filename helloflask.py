@@ -13,7 +13,8 @@ def favicon():
 @app.route("/index")
 def index():
     return render_template("index.html",
-                           title='Home')
+			    smoker=url_for("static", filename="img/300x300Brinkman.jpeg"),
+			    title='Home')
 			   			   
 @app.route("/hello")
 def hello():
