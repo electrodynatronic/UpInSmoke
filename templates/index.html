@@ -1,5 +1,20 @@
 <html>
   <head>
+    <style>
+    body {
+	    background-color: linen;
+	 }
+    h1 	{
+	  color: maroon;
+	  margin-left: 40px;
+	} 
+	IMG.displayed 
+	{
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto 
+	}
+	</style>
     {% if title %}
     <title>{{ title }} - UpInSmoke</title>
     {% else %}
@@ -9,7 +24,7 @@
   <body>
     <div>UpInSmoke: <a href="/index">Home</a></div>
     <hr>
-    <img src={{smoker}}>
+    <img class="displayed" src={{smoker}} width="90%" height="90%">
     {% block content %}{% endblock %}
   </body>
 </html>
